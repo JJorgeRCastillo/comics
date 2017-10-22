@@ -1,0 +1,30 @@
+<div *ngIf="personaje else nodata">
+  <h1>{{ personaje.name }}
+    <small> {{ personaje.title }}</small>
+  </h1>
+  <hr />
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="personaje.img" [alt]="personaje.title" class="img-fluid" />
+      <br />
+      <br />
+      <a class="btn btn-outline-primary btn-block" [routerLink]="['home']">Regresar</a>
+      <br />
+      <br />
+    </div>
+    <div class="col-md-8">
+      <br />
+      <h3>{{ personaje.description }}</h3>
+      <hr />
+      <p>
+        {{ personaje.details }}
+      </p>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #nodata>
+  <p>No hay información para el filtro seleccionado <b> {{ filtro }}</b></p>
+</ng-template>

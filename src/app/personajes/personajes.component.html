@@ -1,0 +1,16 @@
+<h3>
+   Personajes de Comic
+</h3>
+<hr />
+<div class="card-columns">
+   <div *ngFor="let personaje of personajes" class="card">
+      <img class="card-img-top img-fluid" [src]="personaje.img" alt="Card image cap">
+      <div class="card-block">
+         <h4 class="card-title">{{ personaje.name }}</h4>
+         <p class="card-text">
+            {{ personaje.description }}
+         </p>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" (click)="buscarPersonaje(personaje.complexity)">Ver Información</button>
+   </div>
+</div>
